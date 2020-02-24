@@ -15,11 +15,16 @@ class Classroom
    @students.any? { |student|  student == name}
 
  end
- def test_set_student_names
-
+ def set_student_names(name)
+   @students.push(name)
  end
 
- def remove_student_names
+ def remove_student_names(name)
+     @students.delete_if { | student| student == name}
+ end
+
+ def change_lecturer(name)
+   @lecturer = name
 
  end
 

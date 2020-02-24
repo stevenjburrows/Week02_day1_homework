@@ -35,14 +35,22 @@ class TestClassroom < MiniTest::Test
   end
 
   def test_set_student_names__add
+    assert_equal(["David", "Mairi", "Iain","Steven", "Rob" ], @classroom1.set_student_names("Rob"))
 
   end
 
-  def test_set_student_names__remove
+  def test_set_student_names__remove__exists
+    assert_equal(["David", "Mairi", "Iain"], @classroom1.remove_student_names("Steven"))
+
+  end
+
+  def test_set_student_names__remove__doesnt_exists
+    assert_equal(["David", "Mairi", "Iain", "Steven"], @classroom1.remove_student_names("John"))
 
   end
 
   def test_change_lecturer
+    assert_equal("Stephen", @classroom1.change_lecturer("Stephen"))
 
   end
 
